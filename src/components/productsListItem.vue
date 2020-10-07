@@ -12,15 +12,20 @@
           <span class="price price_old" v-if="oldPrice">{{oldPrice}} $</span>
           <span class="price">{{currentPrice}} $</span>
         </div>
-        <a href="javascript:;" @click="toggleCart" :class="{'btn': true, 'active btn_in-cart': inCart}">{{(inCart) ? 'В корзине' : 'Купить'}}</a>
+        <a href="javascript:;" @click="toggleCart()" class="btn" v-if="loading"><loader/></a>
+        <a href="javascript:;" @click="toggleCart()" :class="{'btn': true, 'active btn_in-cart': inCart}" v-else>{{(inCart) ? 'В корзине' : 'Купить'}}</a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios/dist/axios.min.js'
+import Loader from '@/components/loader'
+
 export default {
   name: 'productsListItem',
+  components: { Loader },
   props: ['value'],
   data: () => ({
     storageState: null,
@@ -31,7 +36,8 @@ export default {
     oldPrice: false,
     currentPrice: null,
     img: null,
-    isSold: false
+    isSold: false,
+    loading: false
   }),
   created () {
     this.storageState = localStorage.getItem(this.index)
@@ -55,12 +61,19 @@ export default {
   },
   methods: {
     toggleCart () {
-      if (this.inCart === false) {
-        this.inCart = true
-      } else {
-        this.inCart = false
-      }
-      localStorage.setItem(this.index, this.inCart)
+      this.loading = true
+      axios.get('https://jsonplaceholder.typicode.com/posts/1').then((p) => {
+        console.log(p)
+
+        this.loading = false
+
+        if (this.inCart === false) {
+          this.inCart = true
+        } else {
+          this.inCart = false
+        }
+        localStorage.setItem(this.index, this.inCart)
+      })
     }
   }
 }

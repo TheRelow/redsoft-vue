@@ -14,7 +14,7 @@
       <div class="footer__side">
         <div class="footer__contact">
           <a href="tel:+74955555555" class="link link_icon"><img src="../assets/img/map-point.svg" alt="">+7 (495) 555-55-55</a>
-          <a href="javascript:;" class="link link_icon"><img src="../assets/img/phone.svg" alt="">г. Москва, ул. Расплетина, 24</a>
+          <a href="https://yandex.ru/maps/213/moscow/house/ulitsa_raspletina_24/Z04Ycg9kSkcCQFtvfXt4dXljZg==/?ll=37.484325%2C55.794502&utm_source=main_stripe_big&z=17.15" target="_blank" rel="nofollow" class="link link_icon"><img src="../assets/img/phone.svg" alt="">г. Москва, ул. Расплетина, 24</a>
         </div>
       </div>
     </div>
