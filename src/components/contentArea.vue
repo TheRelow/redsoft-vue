@@ -3,69 +3,7 @@
     <div class="wrapper">
       <div class="h1 content__title">Картины эпохи Возрождения</div>
       <div class="product-list">
-        <div class="product-list__item product">
-          <div class="product__image">
-            <img src="../assets/img/p1.jpg" alt="">
-          </div>
-          <div class="product__content">
-            <div class="product__title">
-              «Рождение Венеры» Сандро Боттичелли
-            </div>
-            <div class="product__bottom">
-              <div class="product__price">
-                <span class="price price_old">2 000 000 $</span>
-                <span class="price">1 000 000 $</span>
-              </div>
-              <a href="javascript:;" class="btn">Купить</a>
-            </div>
-          </div>
-        </div>
-        <div class="product-list__item product">
-          <div class="product__image">
-            <img src="../assets/img/p2.jpg" alt="">
-          </div>
-          <div class="product__content">
-            <div class="product__title">
-              «Тайная вечеря»  Леонардо да Винчи
-            </div>
-            <div class="product__bottom">
-              <div class="product__price">
-                <span class="price">3 000 000 $</span>
-              </div>
-              <a href="javascript:;" class="btn">Купить</a>
-            </div>
-          </div>
-        </div>
-        <div class="product-list__item product">
-          <div class="product__image">
-            <img src="../assets/img/p3.jpg" alt="">
-          </div>
-          <div class="product__content">
-            <div class="product__title">
-              «Сотворение Адама»
-              Микеланджело
-            </div>
-            <div class="product__bottom">
-              <div class="product__price">
-                <span class="price price_old">6 000 000 $</span>
-                <span class="price">5 000 000 $</span>
-              </div>
-              <a href="javascript:;" class="btn active btn_in-cart">В корзине</a>
-            </div>
-          </div>
-        </div>
-        <div class="product-list__item product product_sold">
-          <div class="product__image">
-            <img src="../assets/img/p4.jpg" alt="">
-          </div>
-          <div class="product__content">
-            <div class="product__title">
-              «Урок анатомии»  Рембрандт
-            </div>
-            <div class="product__bottom">
-            </div>
-          </div>
-        </div>
+        <products-list-item v-for="(item, index) in products" :key="item.name" :value="{item, index}"></products-list-item>
         <div class="product-list__item product-list__item_empty"></div>
         <div class="product-list__item product-list__item_empty"></div>
         <div class="product-list__item product-list__item_empty"></div>
@@ -75,8 +13,58 @@
 </template>
 
 <script>
+import ProductsListItem from '@/components/productsListItem'
+
+import image1 from '../assets/img/p1.jpg'
+import image2 from '../assets/img/p2.jpg'
+import image3 from '../assets/img/p3.jpg'
+import image4 from '../assets/img/p4.jpg'
+
 export default {
-  name: 'contentArea'
+  name: 'contentArea',
+  components: { ProductsListItem },
+  data: () => ({
+    products: [
+      {
+        name: '«Рождение Венеры» Сандро Боттичелли',
+        status: 'sale',
+        inCart: false,
+        img: image1,
+        price: {
+          current: '1 000 000',
+          old: '2 000 000'
+        }
+      },
+      {
+        name: '«Тайная вечеря» Леонардо да Винчи',
+        status: 'sale',
+        inCart: false,
+        img: image2,
+        price: {
+          current: '3 000 000'
+        }
+      },
+      {
+        name: '«Сотворение Адама» Микеланджело',
+        status: 'sale',
+        inCart: false,
+        img: image3,
+        price: {
+          current: '5 000 000',
+          old: '6 000 000'
+        }
+      },
+      {
+        name: '«Урок анатомии» Рембрандт',
+        status: 'sold',
+        inCart: false,
+        img: image4,
+        price: {
+          current: '3 000 000'
+        }
+      }
+    ]
+  })
 }
 </script>
 
