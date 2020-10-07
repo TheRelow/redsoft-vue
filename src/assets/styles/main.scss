@@ -7,6 +7,10 @@
   min-height: 100vh;
 }
 
+.page__header-and-content {
+  min-height: calc(100vh - 96px);
+}
+
 .header {
   display: flex;
   align-items: center;

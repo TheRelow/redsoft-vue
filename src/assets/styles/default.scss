@@ -97,6 +97,10 @@ input[type="text"]:focus, input[type="email"]:focus {
   border-color: #B5B5B5;
 }
 
+.search-group {
+  display: flex;
+}
+
 .wrapper {
   max-width: 1216px;
   width: 90%;
