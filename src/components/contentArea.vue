@@ -47,7 +47,7 @@ export default {
       {
         name: '«Сотворение Адама» Микеланджело',
         status: 'sale',
-        inCart: false,
+        inCart: true,
         img: image3,
         price: {
           current: '5 000 000',
