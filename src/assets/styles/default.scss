@@ -1,0 +1,114 @@
+@import 'var.scss';
+
+body {
+  font-family: 'Merriweather', serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #343030;
+  background: $bg;
+}
+
+h1, .h1 {
+  font-size: 24px;
+}
+
+h2, .h2 {
+  font-size: 18px;
+}
+
+h3, .h3 {
+  font-size: 16px;
+}
+
+h4, .h4, h5, .h5, h6, .h6, p {
+  font-size: 14px;
+}
+
+.text_light {
+  color: #F4F6F9;
+}
+
+button, .btn, input[type="submit"] {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 118px;
+  height: 48px;
+  padding: 0 9px;
+  font-size: 14px;
+  color: #F4F6F9;
+  background: #403432;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+button.active, .btn.active, input.active {
+  background: #5B3A32;
+}
+
+button.btn_in-cart, .btn.btn_in-cart, input[type="submit"].btn_in-cart {
+  padding-left: 29px;
+}
+
+button:hover, .btn:hover, input[type="submit"]:hover {
+  background: #776763;
+}
+
+button[disabled], input[type="submit"][disabled] {
+  background: #C1B4B1;
+  cursor: no-drop;
+}
+
+button.btn_in-cart:before, .btn.btn_in-cart:before, input[type="submit"].btn_in-cart:before {
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  height: 20px;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('./assets/img/ok.svg');
+  transform: translateY(-50%);
+  content: '';
+}
+
+input[type="text"], input[type="email"] {
+  display: inline-flex;
+  align-items: center;
+  min-width: 294px;
+  height: 48px;
+  margin-top: -1px;
+  padding: 0 16px;
+  color: #343030;
+  border-radius: 0;
+  background: $bg;
+  border: 1px solid #E1E1E1;
+  outline-offset: -120px;
+}
+
+input[type="text"]::placeholder, input[type="email"]::placeholder {
+  color: #9F9F9F;
+}
+
+input[type="text"]:focus, input[type="email"]:focus {
+  border-color: #B5B5B5;
+}
+
+.wrapper {
+  max-width: 1216px;
+  width: 90%;
+  margin: 0 auto;
+}
+.wrapper_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
